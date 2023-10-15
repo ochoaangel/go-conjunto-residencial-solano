@@ -1,0 +1,20 @@
+# Archivos de compilación y ejecución
+*.[568ao]
+*.so
+*.pyc
+*.exe
+*.swp
+
+# Archivos generados por el IDE
+*~
+.DS_Store
+
+# Archivos de depuración
+core
+_cgo_
+_obj_
+_test_
+_testmain.go
+test.out
+build.out
+y.tab.[ch]
