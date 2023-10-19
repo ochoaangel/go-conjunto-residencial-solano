@@ -7,10 +7,10 @@ import (
 )
 
 type Temperature struct {
-	ID        primitive.ObjectID `bson:"_id,		omitempty"`
-	Temp1     *float64           `bson:"temp1,		omitempty"`
-	Temp2     *float64           `bson:"temp2, 		omitempty"`
-	Temp3     *float64           `bson:"temp3,		omitempty"`
+	ID        primitive.ObjectID `bson:"_id,omitempty"`
+	Temp1     *float64           `bson:"temp1,omitempty"`
+	Temp2     *float64           `bson:"temp2,omitempty"`
+	Temp3     *float64           `bson:"temp3,omitempty"`
 	CreatedAt time.Time          `bson:"created_at,	omitempty"`
 }
 

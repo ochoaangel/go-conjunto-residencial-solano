@@ -10,6 +10,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
 	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 func TemperatureCreateOne(c *gin.Context) {
@@ -28,7 +29,7 @@ func TemperatureCreateOne(c *gin.Context) {
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"ok":      false,
-			"message": "Temperature NOT added",
+			"message": "Temperature NOT added.",
 			"error":   err.Error(),
 		})
 		return
@@ -36,11 +37,14 @@ func TemperatureCreateOne(c *gin.Context) {
 
 	body.CreatedAt = time.Now()
 
+	// Generar un nuevo valor de campo `_id` automáticamente.
+	body.ID = primitive.NewObjectID()
+
 	result, err := collection.InsertOne(context.Background(), body)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"ok":      false,
-			"message": "Temperature NOT added",
+			"message": "Temperature NOT added..",
 			"error":   "Failed to create temperature",
 		})
 		return
@@ -71,7 +75,7 @@ func TemperatureCreateMultiple(c *gin.Context) {
 		if err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{
 				"ok":      false,
-				"message": "Temperatures NOT added",
+				"message": "Temperatures NOT added...",
 				"error":   err.Error(),
 			})
 			return
@@ -86,7 +90,7 @@ func TemperatureCreateMultiple(c *gin.Context) {
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"ok":      false,
-			"message": "Temperatures NOT added",
+			"message": "Temperatures NOT added....",
 			"error":   "Failed to create temperatures",
 		})
 		return
