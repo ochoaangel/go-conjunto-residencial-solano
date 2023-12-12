@@ -47,13 +47,12 @@ func myInit() error {
 	// create App
 	app := gin.Default()
 
-	app.POST("/Temperature/createOne", controllers.TemperatureCreateOne)
-	app.POST("/Temperature/createMultiple", controllers.TemperatureCreateMultiple)
-	app.GET("/Temperature/getOne/:id", controllers.TemperatureGetOneByID)
-	app.GET("/Temperature/getMultiple", controllers.TemperatureGetMultipleByID)
-	app.GET("/Temperature/getByCreatedAtRange", controllers.TemperatureGetMultipleByCreatedAtRange)
-	app.DELETE("/Temperature/deleteOne/:id", controllers.TemperatureDeleteOneByID)
-	app.DELETE("/Temperature/deleteMultiple", controllers.TemperatureDeleteMultipleByID)
+	app.POST("/", controllers.Create)
+	app.GET("/getAll", controllers.GetAll)
+	app.GET("/getRange", controllers.GetRange)
+	app.GET("/getLastNotNull", controllers.GetLastNotNull)
+	app.GET("/getLastWithNull", controllers.GetLastWithNull)
+	app.GET("/test", controllers.Test)
 
 	// Correr App
 	app.Run()
