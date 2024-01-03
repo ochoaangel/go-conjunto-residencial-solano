@@ -1,0 +1,78 @@
+{
+    "B1": {
+        "Termico": false,
+        "Encendido": false,
+        "Temperatura": {
+            "Check": false,
+            "Cambio": false,
+            "TimeLoop": 20,
+            "Maxima": 80
+        }
+    },
+    "B2": {
+        "Termico": false,
+        "Encendido": false,
+        "Temperatura": {
+            "Check": false,
+            "Cambio": false,
+            "TimeLoop": 5,
+            "Maxima": 80
+        }
+    },
+    "B3": {
+        "Termico": false,
+        "Encendido": false,
+        "Temperatura": {
+            "Check": false,
+            "Cambio": false,
+            "TimeLoop": 5,
+            "Maxima": 80
+        }
+    },
+    "Altura": {
+        "Check": false,
+        "TimeLoop": 5,
+        "CadaCambio": false,
+        "H1": 10,
+        "H2": 20,
+        "H3": 30,
+        "H4": 40,
+        "H5": 50
+    },
+    "Presion": {
+        "Check": false,
+        "CheckAntesBomba": false,
+        "CheckDespuesBomba": false,
+        "Min": 100,
+        "Max": 200,
+        "TimeLoop": 5
+    },
+    "Cambios": {
+        "P1": false,
+        "P2": false,
+        "P3": false,
+        "P4": false
+    },
+    "Fuente": {
+        "Check": false,
+        "CadaCambio": false
+    },
+    "Flujo": {
+        "Calle": {
+            "Check": false,
+            "TimeLoop": 5
+        },
+        "Tanque": {
+            "Check": false,
+            "TimeLoop": 5
+        }
+    },
+    "Valvula": {
+        "Check": false,
+        "CadaCambio": false
+    },
+    "Comunicacion": {
+		"Baud": 9600,
+		"Port": "COM5"
+	}
+}
