@@ -3,8 +3,11 @@ package initializers
 import (
 	"bufio"
 	"crs/models"
+	"crs/serialDataReception"
+	"encoding/json"
 	"fmt"
 	"io"
+	"log"
 	"strings"
 	"time"
 
@@ -68,7 +71,19 @@ func SerialPortConfig(crs models.CrsInitConfigModel) {
 				}
 			} else {
 				message = strings.TrimSpace(message)
-				fmt.Printf("Mensaje recibido por puerto Serial: %s\n", message)
+				fmt.Println("messageFromRs232", message)
+				var in models.All
+				err := json.Unmarshal([]byte(message), &in)
+				if err != nil {
+					log.Fatal(err)
+				}
+
+				// ////////////////////////////////////////////////////////////////////////
+				// // proceso los datos recibidos
+				// ////////////////////////////////////////////////////////////////////////
+
+				serialDataReception.SerialDataReceptionActionHandler(in, crs)
+
 			}
 		}
 	}()
